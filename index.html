@@ -49,7 +49,8 @@
           var b = document.getElementById(listB).value;
           var listA = b.split(',');
           var combin = trim(map(a,b));
-          print combin
+          var resultdiv = document.getElementById("resultGrid").innerhtml();
+            resultdiv.print combin
     </script>
 </body>
 </html>
