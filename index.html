@@ -44,13 +44,19 @@
 
     <script>
         function generate() {
-          var a = document.getElementById(listA).value;
+          var a = document.getElementById("listA").value;
+          var b = document.getElementById("listB").value;
+
           var listA = a.split(',');
-          var b = document.getElementById(listB).value;
-          var listA = b.split(',');
-          var combin = trim(map(a,b));
-          var resultdiv = document.getElementById("resultGrid").innerhtml();
-            resultdiv.print combin
+          var listB = b.split(',');
+            
+          var combins = [];
+            for (var wordA of listA) {
+                for (var wordB of listB) {
+                    combins.push(wordA + ", " + wordB);}}
+            
+          var resultdiv = document.getElementById("resultGrid");
+            resultdiv.innerHTML = combins.join('; ');
     </script>
 </body>
 </html>
